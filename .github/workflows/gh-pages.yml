@@ -13,19 +13,12 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: 'recursive'
-    - name: Initialize and Update Submodules
-      run: |
-        git submodule init
-        git submodule update
+
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.115.1' 
-    - name: Initialize Hugo Modules
-      run: hugo mod init
+        hugo-version: '0.115.0' 
 
-    - name: Update Hugo Modules
-      run: hugo mod get -u
     - name: Build
       run: hugo --minify
       
