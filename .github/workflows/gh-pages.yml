@@ -1,5 +1,4 @@
-name: Hugo Deploy
-
+name: Test
 on:
   push:
     branches:
