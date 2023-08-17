@@ -6,14 +6,9 @@ on:
       - main
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -25,9 +20,10 @@ jobs:
 
     - name: Build
       run: hugo --minify
-
+      
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./public
+        external_repository: ninoho/ninoho.github.io
+        publish_branch: gh-pages
