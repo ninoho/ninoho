@@ -18,7 +18,11 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: '0.115.1' 
+    - name: Initialize Hugo Modules
+      run: hugo mod init
 
+    - name: Update Hugo Modules
+      run: hugo mod get -u
     - name: Build
       run: hugo --minify
       
