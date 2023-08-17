@@ -27,4 +27,4 @@ jobs:
         personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         external_repository: ninoho/ninoho.github.io
         publish_branch: main
-        publish_dir: ./
+        publish_dir: ./public
