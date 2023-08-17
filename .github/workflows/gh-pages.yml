@@ -18,6 +18,8 @@ jobs:
       with:
         hugo-version: '0.115.1' 
 
+    - name: Update
+      run: git submodule update --init --recursive
     - name: Build
       run: hugo --minify
       
